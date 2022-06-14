@@ -9,17 +9,31 @@
     <title>Document</title>
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    *{
+            box-sizing: border-box;
+        }
 
         #main{
             width: 100%;
             height: auto;
-            border: 1px solid black;
             display: flex;
+            justify-content: space-around;
+            background-color: #eeeee9 ;
         }
         #main>div{
             width: 48%;
-            border: 1px solid black;
-            margin: auto;
+        }
+        #one>img{
+            width: 50%;
+            height: 30%;
+            margin-left:350px;
+            margin-top: 30px;
+        }
+        p{
+            font-size: 20px;
+        }
+        h2{
+            color: green;
         }
         footer{
             background-color: #7d9c5b;
@@ -30,7 +44,7 @@
             width: 70%;
             margin: auto;
         }
-        ul{
+        .footer_col>ul{
             list-style: none;
         }
         #container{
@@ -70,7 +84,9 @@
 </head>
 <body>
     <div id="main">
-        <div id="one"></div>
+        <div id="one">
+            <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/2I8A7793.progressive.jpg?v=1631346990" alt="">
+        </div>
         <div id="two">
             <h1>Fruit Box by Kimaye (Strength)</h1>
             <i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
@@ -82,14 +98,14 @@
                 <li>4 pcs of Pomegranates (1 kg)</li>
                 <li>1 punnet of Red Globe Grapes (400 g)</li>
             </ul>
-            <p>Packaging: Kappa Cardboard Box (Beige)</p>
-            <p>Gift Instructions</p>
+            <p> <b> Packaging: Kappa Cardboard Box (Beige)</b></p>
+            <p> <b>Gift Instructions</b> </p>
             <ul>
                 <li>Add recipient/sender name in "Gift Instructions" in cart.</li>
                 <li>Invoice for gifts will be only e-mailed to sender.</li>
                 <li>Delivery partner will coordinate on the contact number given in shipping information.</li>
             </ul>
-            <p>Bulk Buying: In case you wish to purchase more than 5 Gift Boxes, please WhatsApp us on 8291273262 to avail special offers.</p>
+            <p> <b>Bulk Buying:</b> In case you wish to purchase more than 5 Gift Boxes, please WhatsApp us on 8291273262 to avail special offers.</p>
             <h2><i class="fa fa-inr"></i>1,800</h2>
             <div>
                 <!-- append cart and increment decrement here -->
