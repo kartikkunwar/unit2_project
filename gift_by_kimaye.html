@@ -13,8 +13,11 @@
             padding: 0px;
             box-sizing: border-box;
         }
-        body{
+        .big{
             background-color: #eeeee9;
+
+        }
+        body{
             line-height: 1.5;
             font-family: 'Poppins', sans-serif;
         }
@@ -63,7 +66,7 @@
             position: relative;
         }
         #main>div:hover button{
-            bottom: 40px;
+            bottom: 65px;
             opacity: 1;
         }
         #main>div>p{
@@ -73,11 +76,12 @@
             cursor: pointer;
         }
         #main>div>p:last-child{
-            color: red;
+            color: green;
         }
         img:hover{
             transform: scale(1.07);
         }
+        
         button{
             width: 100%;
             height: 40px;
@@ -146,27 +150,37 @@
         .links>p>a:hover{
             text-decoration: underline;
         }
+        i{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
     </style>
 </head>
 <body>
+    <div class="big">
     <div class="links">
         <p> <a href="">all fruits</a> </p>
         <p><a href="">fresh cuts</a></p>
         <p><a href="">fruit combos</a></p>
         <p><a href="">gifts by kimaye</a></p>
     </div>
+    </div>
+    <div class="big">
     <div id="homelink">
         <p><a href=""><i class="fa fa-home"></i>Home /</a> Gifts by kimaye</p>
         <p>Showing 4 results</p>
     </div>
-    <div id="main">
-
     </div>
+    <div class="big">
+    <div id="main">
+        <!-- appended divs with js -->
+    </div></div>
+    <div class="big">
     <div class="links">
         <p> <a href="">all fruits</a> </p>
         <p><a href="">fresh cuts</a></p>
         <p><a href="">fruit combos</a></p>
         <p><a href="">gifts by kimaye</a></p>
+    </div>
     </div>
     <footer>
         <div id="big">
@@ -222,23 +236,32 @@
     ];
     let newCart=JSON.parse(localStorage.getItem("displayCart"))||[];
 
-    gettingItems();
+    gettingItems(itemObj);
 
-    function gettingItems(){
+    function gettingItems(itemObj){
     itemObj.forEach(function(el){
         let box=document.createElement("div")
         let cont1=document.createElement("img")
         cont1.setAttribute("src",el.image);
         let cont2=document.createElement("p")
         cont2.innerText=el.name;
+        let cont5=document.createElement("i")
+        cont5.setAttribute("class","fa fa-inr")
+        cont5.innerText=el.price
         let cont3=document.createElement("p")
-        cont3.innerText=el.price;
+        // cont3.innerText=el.price;
+        cont3.style.color="red";
         let cont4=document.createElement("button")
-        cont4.innerText="Add to Cart"
+        // cont4.innerText="Add to Cart"
         cont4.addEventListener("click",function(){
             getItem(el);
         })
-        box.append(cont1,cont4,cont2,cont3);
+        cont6=document.createElement("i")
+        cont6.setAttribute("class","fa fa-shopping-cart")
+        cont6.innerText="Add to Cart"
+        cont3.append(cont5)
+        cont4.append(cont6)
+        box.append(cont1,cont2,cont3,cont4);
         document.querySelector("#main").append(box)
     })
 
