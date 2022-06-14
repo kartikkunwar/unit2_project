@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #big{
+            width: 100%;
+            background-color: #eeeeea;
+            height: auto;
+        }
+        #main{
+            width: 70%;
+            height: auto;
+            margin: auto;
+            border: 1px solid black;
+            display: flex;
+            justify-content: space-between;
+        }
+        #main>div{
+            border: 1px solid black;
+            width: 25%;
+        }
+        div>img{
+            width: 100%;
+        }
+        div>ul{
+            display: inline-flex;
+            list-style: none;
+            color: black;
+        }#main>div:first-child{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        div>ul>li{
+          text-transform: uppercase;
+          text-align: center;
+          width: 60px;
+          margin: 15px;
+          padding: 15px;
+          
+        }
+        #main>div:last-child{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .submenu{
+            display: none;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            margin-top: 20px;
+            
+        }
+        .submenu>ul{
+            padding-right: 70px;
+            padding-left: 20px;
+        }
+        #main>div>ul>li{
+            position: relative;
+        }
+        #main>div>ul>li:first-child:hover .submenu{
+            display: block;
+            position: absolute;
+        }
+        #main>div>ul>li:first-child:hover .submenu ul{
+            display: block;
+            margin-top: 20px;
+        }#main>div>ul>li:first-child:hover .submenu ul li{
+            margin-top: 20px;
+        }
+        a{
+            text-decoration: none;
+        }
+        
+            
+    </style>
+</head>
+<body>
+    <div id="big">
+        <div id="main">
+        <div>
+            <ul>
+            <li> <a href="#">shop<i class="fa fa-angle-down"></i></a>
+            <div class="submenu">
+                <ul>
+                    <li><a href="">all fruits</a></li>
+                    <li><a href="">fresh cuts</a></li>
+                    <li><a href="">fruit combos</a></li>
+                    <li><a href="">gifts by kimaye</a></li>
+                    <li><a href="">grape family by kimaye</a></li>
+                    <li><a href="">return and replacement</a></li>
+                    <li><a href="">fruits * subscription</a></li>
+                    <li><a href="">community buying</a></li>
+                </ul>
+            </div></li>
+            <li> <a href="#">learn<i class="fa fa-angle-down"></i></a></li>
+            <li>grow</li>
+        </ul></div>
+        <div>
+            <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/website-logo_400x.png?v=1596288204" alt="">
+        </div>
+        <div><ul>
+            <li>Mumbai</li>
+            <li><i class="fa fa-magnifying-glass"></i></li>
+            <li><i class="fa fa-user"></i></li>
+            <li><i class="fa-solid fa-bag-shopping"></i></li>
+        </ul></div>
+        </div>
+    </div>
+    
+</body>
+</html>
