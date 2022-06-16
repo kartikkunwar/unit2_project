@@ -1,85 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <title>Document</title>
     <style>
-        body{
+        body {
             background-image: url("https://cdn.shopify.com/s/files/1/0449/5225/6667/files/jazz-bg-texture-min_1.jpg?v=1616673456");
         }
-        #heading{
+
+        #header {
+            width: 100%;
+            height: 50px;
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #437111;
+            color: white;
+            font-weight: bold;
+        }
+
+        .box1>ul {
+            display: inline-flex;
+            justify-content: flex-start;
+            list-style: none;
+        }
+
+        .box1>ul li {
+            margin: 15px;
+        }
+
+        .box1>ul>li:hover a {
+            color: #98cb4d
+        }
+
+        .sub-menu {
+            display: none;
+            z-index: 1;
+
+        }
+
+        .box1>ul li:hover .sub-menu {
+            display: block;
+            position: absolute;
+            background-color: white;
+
+        }
+
+        .box1>ul li:hover .sub-menu ul {
+            list-style-type: none;
+            background-color: white;
+            display: block;
+
+
+        }
+
+        .box1>ul li:hover .sub-menu ul li {
+            width: 150px;
+            background-color: white;
+            text-align: left;
+        }
+
+        .sub-menu ul li:hover {
+            transform: scale(0.90);
+
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .navbar {
+
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+
+        .box2 {
+            width: 20%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box1 {
+            width: 33%;
+            gap: 10px;
+            align-items: center;
+            list-style-type: none;
+            padding-left: 25px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px
+        }
+
+        .box3 {
+
+            width: 33%;
+            justify-content: flex-end;
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            padding-right: 30px;
+            font-size: 1.2rem;
+
+        }
+
+        .box2>img {
+            width: 50%;
+        }
+
+        nav {
+            position: sticky;
+            top: 0px;
+            z-index: 1;
+            background-color: #eeeeea;
+        }
+
+        #heading {
             width: 100%;
             height: auto;
             text-align: center;
             color: white;
             background-color: #437111;
         }
-        #heading>h1{
+
+        #heading>h1 {
             text-transform: uppercase;
             padding-top: 20px;
         }
-        h1+p>a{
+
+        h1+p>a {
             text-decoration: none;
             color: white;
         }
-        #heading>p{
-            padding-bottom: 20px;
 
+        #heading>p {
+            padding-bottom: 20px;
         }
-        #info{
+
+        #info {
             width: 70%;
             margin: auto;
             height: 400px;
             display: flex;
         }
-        #sidebar{
-            width:30%;
+
+        #sidebar {
+            width: 30%;
             height: 200px;
             margin-left: 20px;
         }
-        #data{
+
+        #data {
             width: 65%;
             height: 400px;
             margin-left: 20px;
         }
-        #sidebar>button{
+
+        #sidebar>button {
             display: block;
             width: 100%;
             height: 25%;
             opacity: 0.4;
         }
-        #sidebar>button:first-child{
+        button{
+            cursor: pointer;
+        }
+        #sidebar>button:first-child {
             background-color: black;
             opacity: 1;
             color: white;
         }
-        #data>div{
+        .side{
+            text-align: left;
+            padding-left: 20px;
+            font-weight: bold;
+        }
+        #data>div {
             width: 100%;
             height: 60px;
             box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
             background-color: white;
         }
-        #data>div>p{
+
+        #data>div>p {
             padding-top: 20px;
             font-weight: bolder;
             font-size: 16px;
             padding-left: 15px;
         }
-        th{
+
+        th {
             width: 200px;
             text-align: left;
         }
-        #data>div:nth-child(3)>p{
+        #data>div:nth-child(3)>p {
             color: green;
         }
+
         /* #data>div:nth-child(3){
             border: 1px solid green;
         } */
-        table{
+        table {
             margin-top: 20px;
+        }
+        tr{
+            height: 40px;
         }
         footer {
             background-color: #7d9c5b;
@@ -122,7 +254,9 @@
             line-height: 40px;
             border-radius: 50%;
         }
-
+        #socialMedia{
+            margin-right: 200px;
+        }
         i {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
@@ -133,33 +267,83 @@
             font-weight: bold;
             font-family: 'Poppins', sans-serif;
         }
-        
     </style>
 </head>
+
 <body>
+    <div id="header">Delivering in Mumbai and Delhi | Same day delivery!</div>
+    <nav>
+        <div class="navbar">
+            <div class="box1">
+                <ul>
+                    <li>shop
+                        <div class="sub-menu">
+                            <ul>
+                                <li>ALL FRUITS</li>
+                                <li>FRESH CUTS</li>
+                                <li>FRUIT COMBOS</li>
+                                <li>GIFT BY KIMAYE</li>
+                                <li>RETURN AND REPLACEMENT</li>
+                                <li>COMMUNITY BUYING</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>learn
+                        <div class="sub-menu">
+                            <ul>
+                                <li>OUR STORY</li>
+                                <li>WHY KIMAYE</li>
+                                <li>TRACEABILITY</li>
+                                <li>BEYOND FRUITS</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>GROW</li>
+                </ul>
+            </div>
+            <div class="box2">
+                <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/website-logo_400x@2x.png?v=1596288204"
+                    alt="" />
+            </div>
+            <div class="box3">
+                <div><a href=""></a><i class="fa-solid fa-location-dot"></i></div>
+                <div><a href=""></a><i class="fa-solid fa-magnifying-glass"></i></div>
+                <div><a href="#"></a><i class="fa-solid fa-user"></i></div>
+                <div><a href=""></a><i class="fa-solid fa-cart-arrow-down"></i></div>
+            </div>
+        </div>
+    </nav>
     <div id="heading">
         <h1>my account</h1>
         <p><a href=""><i class="fa fa-home"></i>Home /</a> My Account</p>
     </div>
     <div id="info">
         <div id="sidebar">
-            <button><h2>MY ACCOUNT</h2></button>
-            <button>DASHBOARD</button>
-            <button>ADDRESSES(1)</button>
-            <button>LOG OUT</button>
+            <button>
+                <h2>MY ACCOUNT</h2>
+            </button>
+            <button><p class="side">DASHBOARD</p></button>
+            <button><p class="side">ADDRESSES(1)</p></button>
+            <button><p class="side">LOG OUT</p></button>
         </div>
         <div id="data">
             <div id="greeting">
                 <!-- append greeting data here -->
             </div>
-            <div><p>Order History :</p></div>
-            <div><p>&#10003; No order has been made yet.</p></div>
-            <div><p>Account details :</p></div>
+            <div>
+                <p>Order History :</p>
+            </div>
+            <div>
+                <p>&#10003; No order has been made yet.</p>
+            </div>
+            <div>
+                <p>Account details :</p>
+            </div>
             <table>
                 <tbody>
                     <tr>
                         <th>Name:</th>
-                       <!-- append name coloumn here -->
+                        <!-- append name coloumn here -->
                     </tr>
                     <tr>
                         <th>E-mail:</th>
@@ -190,9 +374,15 @@
                     <ul>
                         <li><a href="">Follow us on</a></li>
                         <div id="socialMedia">
-                            <a href="#"><img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/fb-icon.png?v=1599571756" alt=""></a>
-                            <a href="#"><img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/insta-icon.png?v=1599571756" alt=""></a>
-                            <a href="#"><img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/twitter-icon.png?v=1599571756" alt=""></a>
+                            <a href="#"><img
+                                    src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/fb-icon.png?v=1599571756"
+                                    alt=""></a>
+                            <a href="#"><img
+                                    src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/insta-icon.png?v=1599571756"
+                                    alt=""></a>
+                            <a href="#"><img
+                                    src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/twitter-icon.png?v=1599571756"
+                                    alt=""></a>
 
                         </div>
                     </ul>
@@ -200,13 +390,14 @@
             </div>
         </div>
     </footer>
-    
+
 </body>
+
 </html>
 <script>
     getdata();
 
-    function getdata(){
+    function getdata() {
 
     }
 </script>
