@@ -10,11 +10,9 @@
     <title>Document</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-        * {
-            margin: 0px;
-            padding: 0px;
-            box-sizing: border-box;
+        body {
+            background-color: #ecece7;
+            font-family: 'Poppins', sans-serif;
         }
 
         #header {
@@ -125,122 +123,120 @@
             z-index: 1;
             background-color: #eeeeea;
         }
-        body {
-            line-height: 1.5;
-            font-family: 'Poppins', sans-serif;
-            background-color: #eeeee9;
+/* ------------------------------------------------------------------middle------------------------------------------------------- */
+        #heading {
+            width: 100%;
+            height: auto;
+            text-align: center;
+            color: white;
+            background-color: #437111;
         }
 
-        .links {
-            width: 40%;
-            height: 100px;
-            margin: auto;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
-
-        .links>p>a {
-            text-decoration: none;
+        #heading>h1 {
             text-transform: uppercase;
-            color: black;
+            padding-top: 20px;
         }
 
-        #homelink {
-            width: 70%;
-            height: 50px;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        a {
+        h1+p>a {
             text-decoration: none;
-            color: black;
+            color: white;
         }
 
-        #main {
+        #heading>p {
+            padding-bottom: 20px;
+        }
+        #table{
             width: 70%;
             height: auto;
             margin: auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(2, auto);
-            gap: 30px 20px;
         }
-
-        #main>div>img {
-            width: 100%;
-            border-radius: 20px;
-            transition: 0.3s;
-            cursor: pointer;
-
-        }
-
-        #main>div {
-            position: relative;
-        }
-
-        #main>div>p {
+        td{
+            width: 300px;
             text-align: center;
-            font-size: 20px;
-            font-family: 'Times New Roman', Times, serif;
-            cursor: pointer;
         }
-
-        #main>div>p:last-child {
-            color: green;
+        #info{
+            width: 30%;
+            height: auto;
+            margin: auto;
+            text-align: center;
         }
-
-        #main>div:hover img {
-            transform: scale(1.07);
-        }
-
-        button {
-            width: 100%;
+        #info>input{
+            width: 70%;
             height: 40px;
-            background-color: green;
+            border: none;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+        #cartinfo{
+            width: 70%;
+            height: 400px;
+            margin: auto;
+            display: flex;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            background-color: white;
+        }
+        #cartinfo>div{
+            width: 48%;
+            /* margin: auto; */
+        }
+        #cartinfo>div:first-child{
+            text-align: center;
+        }
+        #cartinfo>div:first-child>input{
+            width: 90%;
+            height: 100px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            border: none;
+        }
+        #cartinfo>div:last-child{
+            margin-left: 2%;
+            text-align: center;
+        }
+        h1+div{
+            text-align: left;
+        }
+        h1+div+div{
+            width: 100%;
+            height: 30px;
+            background-color: red;
             color: white;
-            border-radius: 0 0 20px 20px;
-            position: absolute;
-            left: 0px;
-            top: 0px;
-            opacity: 0;
+            text-transform: uppercase;
+            border-radius: 5px;
+            text-align: left;
+        }
+        #cartinfo>div:last-child>button{
             cursor: pointer;
-            transition: 0.3s ease;
-
-
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+            height: 50px;
+            font-size: 18px;
+            background-color: #98cb4d;
+            color: white;
+            text-transform: uppercase;
+            border: none;
         }
-
-        #main>div:hover button {
-            transform: scale(1.07);
-            top: 195px;
-            opacity: 1;
+        tbody>tr>td>div>img{
+            width: 50%;
         }
-
-        #homelink>p+p {
-            color: gray;
-            font-size: 13px;
+        tbody>tr>td{
+            border: 1px solid black;
         }
-
-        #homelink>p {
-            font-size: 13px;
-            color: gray;
+        tbody>tr>td>div{
+            display: flex;
         }
-
+        /* ------------------------------------------------------------footer------------------------------------------------------ */
         footer {
             background-color: #7d9c5b;
             padding: 70px 0;
-            margin-top: 50px;
+            margin-top: 100px;
         }
 
         #big {
-            width: 70%;
+            width: 75%;
             margin: auto;
         }
 
-        ul {
+        .footer_col>ul {
             list-style: none;
         }
 
@@ -273,23 +269,15 @@
         #socialMedia{
             margin-right: 200px;
         }
-        hr {
-            width: 72%;
-            margin: auto;
-            margin-top: 50px;
-            color: gray;
-        }
-
-        .links>p:last-child>a {
-            text-decoration: underline;
-        }
-
-        .links>p>a:hover {
-            text-decoration: underline;
-        }
-
         i {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
         }
     </style>
 </head>
@@ -333,35 +321,50 @@
                 <div><a href=""></a><i class="fa-solid fa-location-dot"></i></div>
                 <div><a href=""></a><i class="fa-solid fa-magnifying-glass"></i></div>
                 <div><a href="#"></a><i class="fa-solid fa-user"></i></div>
-                <div><a href="cartcheckout.html"><i class="fa-solid fa-cart-arrow-down"></i></a></div>
+                <div><a href=""></a><i class="fa-solid fa-cart-arrow-down"></i></div>
             </div>
         </div>
     </nav>
-    <div class="first">
-        <div class="links">
-            <p> <a href="">all fruits</a> </p>
-            <p><a href="">fresh cuts</a></p>
-            <p><a href="">fruit combos</a></p>
-            <p><a href="">gifts by kimaye</a></p>
-        </div>
+    <div id="heading">
+        <h1>Cart</h1>
+        <p><a href=""><i class="fa fa-home"></i>Home /</a> Cart</p>
     </div>
-    <div class="big">
-        <div id="homelink">
-            <p><a href=""><i class="fa fa-home"></i>Home /</a> Gifts by kimaye</p>
-            <p>Showing 4 results</p>
-        </div>
+    <div id="table">
+        <table>
+            <thead>
+                <tr>
+                    <td>PRODUCT</td>
+                    <td>PRICE</td>
+                    <td>QUANTITY</td>
+                    <td>TOTAL</td>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- append data here -->
+            </tbody>
+        </table>
     </div>
-    <div class="big">
-        <div id="main">
-            <!-- appended divs with js -->
-        </div>
+    <div id="info">
+        <p>Pick a Delivery date:</p>
+        <input type="date">
+        <p>Choose a time:</p>
+        <input type="time">
+        <h3>Your current delivery location is Mumbai</h3>
     </div>
-    <div class="big">
-        <div class="links">
-            <p> <a href="">all fruits</a> </p>
-            <p><a href="">fresh cuts</a></p>
-            <p><a href="">fruit combos</a></p>
-            <p><a href="">gifts by kimaye</a></p>
+    <div id="cartinfo">
+        <div>
+            <h2>SPECIAL INSTRUCTIONS</h2>
+            <input type="text">
+        </div>
+        <div>
+            <h2>CART TOTALS</h2>
+            <div>
+                <p>Subtotal:</p><hr>
+                <h2>TOTAL</h2>
+            </div>
+            <div>congratulations you've got free shipping!</div>
+            <button>proceed to checkout</button>
+            <button>continue shopping</button>
         </div>
     </div>
     <footer>
@@ -390,78 +393,46 @@
                                     src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/twitter-icon.png?v=1599571756"
                                     alt=""></a>
 
-
                         </div>
                     </ul>
                 </div>
             </div>
         </div>
-        <hr>
     </footer>
-
 
 </body>
 
 </html>
 <script>
-    let itemObj = [{
-        image: "https://cdn.shopify.com/s/files/1/0449/5225/6667/products/2I8A7790_540x.jpg?v=1631346990",
-        name: "Fruit Box By Kimaye (Strength)",
-        price: 1800
-    },
-    {
-        image: "https://cdn.shopify.com/s/files/1/0449/5225/6667/products/2I8A7807_540x.jpg?v=1631347621",
-        name: "Fruit Box By Kimaye (Adore)",
-        price: 2000
-    },
-    {
-        image: "https://cdn.shopify.com/s/files/1/0449/5225/6667/products/2I8A7821_540x.jpg?v=1631350656",
-        name: "Fruit Box By Kimaye (Cherish)",
-        price: 1400
-    },
-    {
-        image: "https://cdn.shopify.com/s/files/1/0449/5225/6667/products/2I8A7821_540x.jpg?v=1631350656",
-        name: "Fruit Box By Kimaye (Seasonal)",
-        price: 1200
-    }
-    ];
-    let newCart = JSON.parse(localStorage.getItem("displayCart")) || [];
+    let datafromproduct = JSON.parse(localStorage.getItem("displayCart")) || [];
 
-    gettingItems(itemObj);
+    display(datafromproduct);
 
-    function gettingItems(itemObj) {
-        itemObj.forEach(function (el) {
-            let box = document.createElement("div")
-            let cont1 = document.createElement("img")
-            cont1.setAttribute("src", el.image);
-            let cont2 = document.createElement("p")
-            cont2.innerText = el.name;
-            let cont5 = document.createElement("i")
-            cont5.setAttribute("class", "fa fa-inr")
-            cont5.innerText = el.price
-            let cont3 = document.createElement("p")
-            // cont3.innerText=el.price;
-            cont3.style.color = "red";
-            let cont4 = document.createElement("button")
-            // cont4.innerText="Add to Cart"
-            cont4.addEventListener("click", function () {
-                getItem(el);
-            })
-            cont6 = document.createElement("i")
-            cont6.setAttribute("class", "fa fa-shopping-cart")
-            cont6.innerText = "Add to Cart"
-            cont3.append(cont5)
-            cont4.append(cont6)
-            box.append(cont1, cont2, cont3, cont4);
-            document.querySelector("#main").append(box)
+    function display(datafromproduct){
+        datafromproduct.forEach(function(el){
+            let row=document.createElement("tr")
+            let col1=document.createElement("td")
+            let box=document.createElement("div")
+            let img=document.createElement("img")
+            img.setAttribute("src",el.image)
+            let nam=document.createElement("p")
+            nam.innerText=el.name
+            let col2=document.createElement("td")
+            col2.innerText=el.price
+            let col3=document.createElement("td")
+            let box2=document.createElement("div")
+            let in1=document.createElement("button")
+            in1.innerText="-"
+            let in2=document.createElement("button")
+            in1.innerText="+"
+            let col4=document.createElement("td")
+            col4.innerText=el.price
+            box.append(img,nam)
+            col1.append(box)
+            box2.append(in1,in2)
+            col3.append(box2)
+            row.append(col1,col2,col3,col4)
+            document.querySelector("tbody").append(row);
         })
-
     }
-    function getItem(el) {
-        newCart.push(el);
-        localStorage.setItem("displayCart", JSON.stringify(newCart));
-        alert("product added to cart")
-    }
-
-
 </script>
