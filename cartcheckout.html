@@ -227,6 +227,13 @@
         td:nth-child(3)>div>input{
             width: 10%;
         }
+        tbody>tr>td:first-child>div>button{
+            border-radius: 50%;
+            height: 50%;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
         /* ------------------------------------------------------------footer------------------------------------------------------ */
         footer {
             background-color: #7d9c5b;
@@ -362,8 +369,8 @@
         <div>
             <h2>CART TOTALS</h2>
             <div>
-                <p>Subtotal:</p><hr>
-                <h2>TOTAL</h2>
+                <p>Subtotal:</p><p  id="subtotal"></p><hr>
+                <h2>TOTAL</h2><p id="total"></p>
             </div>
             <div>congratulations you've got free shipping!</div>
             <button>proceed to checkout</button>
@@ -408,14 +415,22 @@
 </html>
 <script>
     let datafromproduct = JSON.parse(localStorage.getItem("displayCart")) || [];
+    
 
     display(datafromproduct);
+    let count= localStorage.getItem("quantity")||"1";
 
     function display(datafromproduct){
-        datafromproduct.forEach(function(el){
+        document.querySelector("tbody").innerHTML="";
+        datafromproduct.forEach(function(el,index){
             let row=document.createElement("tr")
             let col1=document.createElement("td")
             let box=document.createElement("div")
+            let in0=document.createElement("button")
+            in0.innerText="X"
+            in0.addEventListener("click",function(){
+                del(index)
+            })
             let img=document.createElement("img")
             img.setAttribute("src",el.image)
             let nam=document.createElement("p")
@@ -426,17 +441,43 @@
             let box2=document.createElement("div")
             let in1=document.createElement("button")
             in1.innerText="-"
+            in1.addEventListener("click",substract)
             let in2=document.createElement("input")
+            in2.type="number";
             let in3=document.createElement("button")
             in3.innerText="+"
+            in3.addEventListener("click",add)
+            let p=document.createElement("p")
             let col4=document.createElement("td")
-            col4.innerText=el.price
-            box.append(img,nam)
+            col4.innerText=el.price;
+            box.append(in0,img,nam)
             col1.append(box)
             box2.append(in1,in2,in3)
             col3.append(box2)
             row.append(col1,col2,col3,col4)
             document.querySelector("tbody").append(row);
+            
         })
     }
+
+    function add(){
+        count++;
+        localStorage.setItem("quantity",count)
+        console.log(count)
+        
+    }
+    function substract(){
+        count--;
+        localStorage.setItem("quantity",count)
+        console.log(count)
+
+    }
+    function del(index){
+        datafromproduct.splice(index,1);
+        localStorage.setItem("displayCart",JSON.stringify(datafromproduct))
+        window.location.reload();
+    }
+    display(datafromproduct);
+    
+
 </script>

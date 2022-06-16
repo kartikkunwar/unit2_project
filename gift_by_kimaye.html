@@ -426,7 +426,7 @@
     }
     ];
     let newCart = JSON.parse(localStorage.getItem("displayCart")) || [];
-
+    let inside=[];
     gettingItems(itemObj);
 
     function gettingItems(itemObj) {
@@ -434,6 +434,9 @@
             let box = document.createElement("div")
             let cont1 = document.createElement("img")
             cont1.setAttribute("src", el.image);
+            cont1.addEventListener("click",function(){
+                pick(el)
+            })
             let cont2 = document.createElement("p")
             cont2.innerText = el.name;
             let cont5 = document.createElement("i")
@@ -461,6 +464,10 @@
         newCart.push(el);
         localStorage.setItem("displayCart", JSON.stringify(newCart));
         alert("product added to cart")
+    }
+    function pick(el){
+        inside.push(el);
+        localStorage.setItem("insidefruit", JSON.stringify(inside));
     }
 
 
