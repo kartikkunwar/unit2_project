@@ -218,11 +218,14 @@
         tbody>tr>td>div>img{
             width: 50%;
         }
-        tbody>tr>td{
-            border: 1px solid black;
-        }
         tbody>tr>td>div{
             display: flex;
+        }
+        td:nth-child(3)>div{
+            margin-left: 38%;
+        }
+        td:nth-child(3)>div>input{
+            width: 10%;
         }
         /* ------------------------------------------------------------footer------------------------------------------------------ */
         footer {
@@ -423,13 +426,14 @@
             let box2=document.createElement("div")
             let in1=document.createElement("button")
             in1.innerText="-"
-            let in2=document.createElement("button")
-            in1.innerText="+"
+            let in2=document.createElement("input")
+            let in3=document.createElement("button")
+            in3.innerText="+"
             let col4=document.createElement("td")
             col4.innerText=el.price
             box.append(img,nam)
             col1.append(box)
-            box2.append(in1,in2)
+            box2.append(in1,in2,in3)
             col3.append(box2)
             row.append(col1,col2,col3,col4)
             document.querySelector("tbody").append(row);
