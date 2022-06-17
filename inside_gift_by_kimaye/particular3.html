@@ -127,33 +127,52 @@
         }
 
         #back {
-            width: 70%;
+            width: 75%;
             display: flex;
             margin: auto;
             justify-content: space-between;
         }
 
+        #home {
+            display: flex;
+            align-items: center;
+        }
+
+        #home>p {
+            font-size: 12px;
+            color: gray;
+            margin-left: 10px;
+        }
+
+        #home>a {
+            font-weight: lighter;
+            font-size: 13px;
+        }
+
         body {
             background-color: #ecece7;
         }
+
         #main {
             width: 75%;
             margin: auto;
             height: auto;
             display: flex;
             justify-content: space-between;
-            margin-top: -30px;
+            margin-top: 0px;
         }
+
         #main>div {
             width: 49%;
         }
+
         #im {
             width: 90%;
             margin-left: 0px;
-            margin-top: 18%;
             overflow: hidden;
             position: relative;
         }
+
         #pic {
             max-width: 100%;
             min-width: 100%;
@@ -164,12 +183,16 @@
         #display {
             width: 50%;
             display: flex;
-            margin-left: 28%;
         }
 
         #display>img {
             width: 35%;
             margin-left: 10px;
+            margin-top: -10px;
+        }
+
+        #display>img:first-child {
+            margin-left: 0px;
         }
 
         p {
@@ -225,9 +248,11 @@
             line-height: 40px;
             border-radius: 50%;
         }
-        #socialMedia{
+
+        #socialMedia {
             margin-right: 200px;
         }
+
         i {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
@@ -243,7 +268,7 @@
             width: 100%;
             height: 800px;
             background-image: url("https://cdn.shopify.com/s/files/1/0449/5225/6667/files/yellow_bg.png?v=1600179877");
-            border: 1px solid white;
+            border: 1px solid #ecece7;
         }
 
         #insidesec {
@@ -256,7 +281,7 @@
             text-align: center;
         }
 
-        h1 {
+        #second>h1 {
             text-align: center;
             text-transform: uppercase;
             margin-top: 100px;
@@ -341,7 +366,8 @@
         #cart+p+ul>li {
             font-size: 15px;
         }
-        #display>img:first-child{
+
+        #display>img:nth-child(2) {
             opacity: 0.6;
         }
     </style>
@@ -391,8 +417,14 @@
         </div>
     </nav>
     <div id="back">
-        <a href="particular2.html"><i class="fa-solid fa-arrow-left-long"></i></a>
-        <a href="particular4.html"><i class="fa-solid fa-arrow-right-long"></i></a>
+        <div id="home">
+            <a href=""><i class="fa fa-home"></i>Home / Gifts by kimaye /</a>
+            <p> Fruit Box by Kimaye (Strength)</p>
+        </div>
+        <div>
+            <a href="particular2.html"><i class="fa-solid fa-arrow-left-long"></i></a>
+            <a href="particular4.html"><i class="fa-solid fa-arrow-right-long"></i></a>
+        </div>
     </div>
     <div id="main">
         <div id="one">

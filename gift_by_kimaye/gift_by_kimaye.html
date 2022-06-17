@@ -205,7 +205,7 @@
             border-radius: 0 0 20px 20px;
             position: absolute;
             left: 0px;
-            top: 0px;
+            bottom: -500px;
             opacity: 0;
             cursor: pointer;
             transition: 0.3s ease;
@@ -407,22 +407,26 @@
     let itemObj = [{
         image: "https://cdn.shopify.com/s/files/1/0449/5225/6667/products/2I8A7790_540x.jpg?v=1631346990",
         name: "Fruit Box By Kimaye (Strength)",
-        price: 1800
+        price: 1800,
+        qty:1
     },
     {
         image: "https://cdn.shopify.com/s/files/1/0449/5225/6667/products/2I8A7807_540x.jpg?v=1631347621",
         name: "Fruit Box By Kimaye (Adore)",
-        price: 2000
+        price: 2000,
+        qty:1
     },
     {
         image: "https://cdn.shopify.com/s/files/1/0449/5225/6667/products/2I8A7821_540x.jpg?v=1631350656",
         name: "Fruit Box By Kimaye (Cherish)",
-        price: 1400
+        price: 1400,
+        qty:1
     },
     {
         image: "https://cdn.shopify.com/s/files/1/0449/5225/6667/products/2I8A7821_540x.jpg?v=1631350656",
         name: "Fruit Box By Kimaye (Seasonal)",
-        price: 1200
+        price: 1200,
+        qty:1
     }
     ];
     let newCart = JSON.parse(localStorage.getItem("displayCart")) || [];
@@ -461,9 +465,21 @@
 
     }
     function getItem(el) {
+        let flag=false;
+        newCart.forEach(function(elem){
+            if(elem.name===el.name){
+                elem.qty++;
+                localStorage.setItem("displayCart", JSON.stringify(newCart));
+                flag=true;
+                alert("product already in cart")
+                return;
+            }
+        }) 
+        if(flag==false){
         newCart.push(el);
         localStorage.setItem("displayCart", JSON.stringify(newCart));
         alert("product added to cart")
+        } 
     }
     function pick(el){
         inside.push(el);

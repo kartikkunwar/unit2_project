@@ -7,12 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="">
     <title>Document</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
         body {
             background-color: #ecece7;
-            font-family: 'Poppins', sans-serif;
         }
 
         #header {
@@ -123,7 +122,7 @@
             z-index: 1;
             background-color: #eeeeea;
         }
-/* ------------------------------------------------------------------middle------------------------------------------------------- */
+
         #heading {
             width: 100%;
             height: auto;
@@ -145,96 +144,82 @@
         #heading>p {
             padding-bottom: 20px;
         }
-        #table{
+
+        #info {
             width: 70%;
-            height: auto;
             margin: auto;
-        }
-        td{
-            width: 300px;
-            text-align: center;
-        }
-        #info{
-            width: 30%;
-            height: auto;
-            margin: auto;
-            text-align: center;
-        }
-        #info>input{
-            width: 70%;
-            height: 40px;
-            border: none;
-            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-        }
-        #cartinfo{
-            width: 70%;
             height: 400px;
-            margin: auto;
             display: flex;
+        }
+
+        #sidebar {
+            width: 30%;
+            height: 200px;
+            margin-left: 20px;
+        }
+
+        #data {
+            width: 65%;
+            height: 400px;
+            margin-left: 20px;
+        }
+
+        #sidebar>button {
+            display: block;
+            width: 100%;
+            height: 25%;
+            opacity: 0.4;
+        }
+        button{
+            cursor: pointer;
+        }
+        #sidebar>button:first-child {
+            background-color: black;
+            opacity: 1;
+            color: white;
+        }
+        .side{
+            text-align: left;
+            padding-left: 20px;
+            font-weight: bold;
+        }
+        #data>div {
+            width: 100%;
+            height: 60px;
             box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
             background-color: white;
         }
-        #cartinfo>div{
-            width: 48%;
-            /* margin: auto; */
+
+        #data>div>p {
+            padding-top: 20px;
+            font-weight: bolder;
+            font-size: 16px;
+            padding-left: 15px;
         }
-        #cartinfo>div:first-child{
-            text-align: center;
-        }
-        #cartinfo>div:first-child>input{
-            width: 90%;
-            height: 100px;
-            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-            border: none;
-        }
-        #cartinfo>div:last-child{
-            margin-left: 2%;
-            text-align: center;
-        }
-        h1+div{
+
+        th {
+            width: 200px;
             text-align: left;
         }
-        h1+div+div{
-            width: 100%;
-            height: 30px;
-            background-color: red;
-            color: white;
-            text-transform: uppercase;
-            border-radius: 5px;
-            text-align: left;
+        #data>div:nth-child(3)>p {
+            color: green;
+            margin-bottom: 40px;
         }
-        #cartinfo>div:last-child>button{
-            cursor: pointer;
-            display: block;
-            width: 100%;
-            margin-top: 20px;
-            height: 50px;
-            font-size: 18px;
-            background-color: #98cb4d;
-            color: white;
-            text-transform: uppercase;
-            border: none;
-        }
-        tbody>tr>td>div>img{
-            width: 50%;
-        }
-        tbody>tr>td>div{
+
+        #data>div:nth-child(3){
+            background-color: #ecece7;
+            box-shadow: none;
             display: flex;
+            border: 1px solid green;
+            margin-top: 20px;
+            align-items: center;
         }
-        td:nth-child(3)>div{
-            margin-left: 38%;
+        table {
+            margin-top: 20px;
         }
-        td:nth-child(3)>div>input{
-            width: 10%;
+        tr{
+            height: 40px;
         }
-        tbody>tr>td:first-child>div>button{
-            border-radius: 50%;
-            height: 50%;
-            background-color: black;
-            color: white;
-            cursor: pointer;
-        }
-        /* ------------------------------------------------------------footer------------------------------------------------------ */
         footer {
             background-color: #7d9c5b;
             padding: 70px 0;
@@ -336,46 +321,49 @@
         </div>
     </nav>
     <div id="heading">
-        <h1>Cart</h1>
-        <p><a href=""><i class="fa fa-home"></i>Home /</a> Cart</p>
-    </div>
-    <div id="table">
-        <table>
-            <thead>
-                <tr>
-                    <td>PRODUCT</td>
-                    <td>PRICE</td>
-                    <td>QUANTITY</td>
-                    <td>TOTAL</td>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- append data here -->
-            </tbody>
-        </table>
+        <h1>my account</h1>
+        <p><a href=""><i class="fa fa-home"></i>Home /</a> My Account</p>
     </div>
     <div id="info">
-        <p>Pick a Delivery date:</p>
-        <input type="date">
-        <p>Choose a time:</p>
-        <input type="time">
-        <h3>Your current delivery location is Mumbai</h3>
-    </div>
-    <div id="cartinfo">
-        <div>
-            <h2>SPECIAL INSTRUCTIONS</h2>
-            <input type="text">
+        <div id="sidebar">
+            <button>
+                <h2>MY ACCOUNT</h2>
+            </button>
+            <button><p class="side">DASHBOARD</p></button>
+            <button><p class="side">ADDRESSES(1)</p></button>
+            <button><p class="side">LOG OUT</p></button>
         </div>
-        <div>
-            <h2>CART TOTALS</h2>
-            <div>
-                <p>Subtotal:</p><p  id="subtotal"></p><hr>
-                <h2>TOTAL</h2><p id="total"></p>
+        <div id="data">
+            <div id="greeting">
+                <!-- append greeting data here -->
             </div>
-            <div>congratulations you've got free shipping!</div>
-            <button>proceed to checkout</button>
-            <button>continue shopping</button>
+            <div>
+                <p>Order History :</p>
+            </div>
+            <div>
+                <p>&#10003; No order has been made yet.</p>
+            </div>
+            <div>
+                <p>Account details :</p>
+            </div>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Name:</th>
+                        <!-- append name coloumn here -->
+                    </tr>
+                    <tr>
+                        <th>E-mail:</th>
+                        <!-- append email coloumn here -->
+                    </tr>
+                    <tr>
+                        <th>Address:</th>
+                        <!-- append Address coloumn here -->
+                    </tr>
+                </tbody>
+            </table>
         </div>
+
     </div>
     <footer>
         <div id="big">
@@ -412,72 +400,11 @@
 
 </body>
 
-</html>
+</html><script href=""></script>
 <script>
-    let datafromproduct = JSON.parse(localStorage.getItem("displayCart")) || [];
-    
+    getdata();
 
-    display(datafromproduct);
-    let count= localStorage.getItem("quantity")||"1";
-
-    function display(datafromproduct){
-        document.querySelector("tbody").innerHTML="";
-        datafromproduct.forEach(function(el,index){
-            let row=document.createElement("tr")
-            let col1=document.createElement("td")
-            let box=document.createElement("div")
-            let in0=document.createElement("button")
-            in0.innerText="X"
-            in0.addEventListener("click",function(){
-                del(index)
-            })
-            let img=document.createElement("img")
-            img.setAttribute("src",el.image)
-            let nam=document.createElement("p")
-            nam.innerText=el.name
-            let col2=document.createElement("td")
-            col2.innerText=el.price
-            let col3=document.createElement("td")
-            let box2=document.createElement("div")
-            let in1=document.createElement("button")
-            in1.innerText="-"
-            in1.addEventListener("click",substract)
-            let in2=document.createElement("input")
-            in2.type="number";
-            let in3=document.createElement("button")
-            in3.innerText="+"
-            in3.addEventListener("click",add)
-            let p=document.createElement("p")
-            let col4=document.createElement("td")
-            col4.innerText=el.price;
-            box.append(in0,img,nam)
-            col1.append(box)
-            box2.append(in1,in2,in3)
-            col3.append(box2)
-            row.append(col1,col2,col3,col4)
-            document.querySelector("tbody").append(row);
-            
-        })
-    }
-
-    function add(){
-        count++;
-        localStorage.setItem("quantity",count)
-        console.log(count)
-        
-    }
-    function substract(){
-        count--;
-        localStorage.setItem("quantity",count)
-        console.log(count)
+    function getdata() {
 
     }
-    function del(index){
-        datafromproduct.splice(index,1);
-        localStorage.setItem("displayCart",JSON.stringify(datafromproduct))
-        window.location.reload();
-    }
-    display(datafromproduct);
-    
-
 </script>
